@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
+using WebApp.Common.Serialize;
 using WebApp.Logger.Models;
 
 namespace WebApp.Logger.Loggers.Providers.Mongos
@@ -15,10 +16,10 @@ namespace WebApp.Logger.Loggers.Providers.Mongos
                 Type = model.Type,
                 TableName = model.TableName,
                 DateTime = model.DateTime,
-                PrimaryKey = model.PrimaryKey,
-                OldValues = model.OldValues,
-                NewValues = model.NewValues,
-                AffectedColumns = model.AffectedColumns,
+                PrimaryKey = model.PrimaryKey.ToStringValueDictionary(),
+                OldValues = model.OldValues.ToStringValueDictionary(),
+                NewValues = model.NewValues.ToStringValueDictionary(),
+                AffectedColumns = model.AffectedColumns.ToStringValueDictionary(),
                 CreatedBy = model.CreatedBy,
                 TraceId = model.TraceId
             };
@@ -36,10 +37,10 @@ namespace WebApp.Logger.Loggers.Providers.Mongos
                 Url = model.Url,
                 Source = model.Source,
                 Form = model.Form,
-                Body = model.Body,
-                Response = model.Response,
-                RequestHeaders = model.RequestHeaders,
-                ResponseHeaders = model.ResponseHeaders,
+                Body = model.Body.ToStringValueDictionary(),
+                Response = model.Response.ToStringValueDictionary(),
+                RequestHeaders = model.RequestHeaders.ToStringValueDictionary(),
+                ResponseHeaders = model.ResponseHeaders.ToStringValueDictionary(),
                 Scheme = model.Scheme,
                 TraceId = model.TraceId,
                 Proctocol = model.Proctocol,
@@ -70,11 +71,11 @@ namespace WebApp.Logger.Loggers.Providers.Mongos
                 Area= model.Area,
                 ControllerName= model.ControllerName,
                 ClassName= model.ClassName,
-                Command= model.Command,
+                Command= model.Command.ToStringValueDictionary(),
                 IpAddress= model.IpAddress,
-                Connection= model.Connection,
+                Connection= model.Connection.ToStringValueDictionary(),
                 Duration= model.Duration,
-                Event= model.Event,
+                Event= model.Event.ToStringValueDictionary(),
                 Host= model.Host,
                 Message= model.Message,
                 MethodName= model.MethodName,
@@ -104,10 +105,10 @@ namespace WebApp.Logger.Loggers.Providers.Mongos
                 Url = model.Url,
                 Source = model.Source,
                 Form = model.Form,
-                Body = model.Body,
+                Body = model.Body.ToStringValueDictionary(),
                 Response = model.Response,
-                RequestHeaders = model.RequestHeaders,
-                ResponseHeaders = model.ResponseHeaders,
+                RequestHeaders = model.RequestHeaders.ToStringValueDictionary(),
+                ResponseHeaders = model.ResponseHeaders.ToStringValueDictionary(),
                 ErrorCode = model.ErrorCode,
                 Scheme = model.Scheme,
                 TraceId = model.TraceId,
