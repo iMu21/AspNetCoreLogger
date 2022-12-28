@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using WebApp.Common.Serialize;
 using WebApp.Logger.Models;
@@ -45,10 +46,10 @@ namespace WebApp.Logger.Loggers.Providers.Mongos
         public string SchemaName { get; set; }
         public string TableName { get; set; }
         public DateTime? DateTime { get; set; }
-        public Dictionary<string, string> PrimaryKey { get; set; }
-        public Dictionary<string, string> OldValues { get; set; }
-        public Dictionary<string, string> NewValues { get; set; }
-        public Dictionary<string, string> AffectedColumns { get; set; }
+        public Hashtable PrimaryKey { get; set; }
+        public Hashtable OldValues { get; set; }
+        public Hashtable NewValues { get; set; }
+        public Hashtable AffectedColumns { get; set; }
         public long CreatedBy { get; set; }
         public DateTime? CreatedDateUtc { get; set; }
         public long UpdatedBy { get; set; }

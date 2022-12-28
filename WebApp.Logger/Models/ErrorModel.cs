@@ -15,7 +15,7 @@ namespace WebApp.Logger.Models
         public string Source { get; set; }
         public string Form { get; set; }
         public object Body { get; set; } //object
-        public string Response { get; set; }
+        public object Response { get; set; } //object
         public object RequestHeaders { get; set; } //object
         public object ResponseHeaders { get; set; } //object
         public string ErrorCode { get; set; }

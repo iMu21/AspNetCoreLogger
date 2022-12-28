@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,6 +25,32 @@ namespace WebApp.Common.Serialize
             try
             {
                 return obj.ToJson().ToModel<Dictionary<string, string>>();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        public static Dictionary<string, string[]> ToStringArrayValueDictionary(this object obj)
+        {
+            try
+            {
+                return obj.ToJson().ToModel<Dictionary<string, string[]>>();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        public static Hashtable ToHashTable(this object obj)
+        {
+            try
+            {
+                return obj.ToJson().ToModel<Hashtable>();
             }
             catch (Exception ex)
             {

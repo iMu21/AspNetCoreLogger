@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using WebApp.Logger.Models;
@@ -26,10 +27,10 @@ namespace WebApp.Logger.Loggers.Providers.Mongos
         public string Url { get; set; }
         public string Source { get; set; }
         public string Form { get; set; }
-        public Dictionary<string,string> Body { get; set; } //Dictionary
-        public Dictionary<string, string> Response { get; set; } //Dictionary
-        public Dictionary<string, string> RequestHeaders { get; set; } //Dictionary
-        public Dictionary<string, string> ResponseHeaders { get; set; } //Dictionary
+        public Hashtable Body { get; set; } //Hashtable
+        public Hashtable Response { get; set; } //Hashtable
+        public Dictionary<string, string[]> RequestHeaders { get; set; } //Dictionary
+        public Dictionary<string, string[]> ResponseHeaders { get; set; } //Dictionary
         public string Scheme { get; set; }
         public string TraceId { get; set; }
         public string Proctocol { get; set; }

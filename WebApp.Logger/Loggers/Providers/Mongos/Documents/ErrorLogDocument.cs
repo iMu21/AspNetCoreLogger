@@ -28,9 +28,9 @@ namespace WebApp.Logger.Loggers.Providers.Mongos
         public string Source { get; set; }
         public string Form { get; set; }
         public Dictionary<string,string> Body { get; set; } //Dictionary
-        public string Response { get; set; }
-        public Dictionary<string, string> RequestHeaders { get; set; } //Dictionary
-        public Dictionary<string, string> ResponseHeaders { get; set; } //Dictionary
+        public Dictionary<string, string> Response { get; set; }
+        public Dictionary<string, string[]> RequestHeaders { get; set; } //Dictionary
+        public Dictionary<string, string[]> ResponseHeaders { get; set; } //Dictionary
         public string ErrorCode { get; set; }
         public string Scheme { get; set; }
         public string TraceId { get; set; }

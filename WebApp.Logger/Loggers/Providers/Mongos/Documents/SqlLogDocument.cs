@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using WebApp.Logger.Models;
 using WebApp.Logger.Providers.Mongos;
@@ -33,9 +34,9 @@ namespace WebApp.Logger.Loggers.Providers.Mongos
         public string ClassName { get; set; }
         public string MethodName { get; set; }
 
-        public Dictionary<string,string> Connection { get; set; } //Dictionary
-        public Dictionary<string, string> Command { get; set; } //Dictionary
-        public Dictionary<string, string> Event { get; set; } //Dictionary
+        public Hashtable Connection { get; set; } //Hashtable
+        public Hashtable Command { get; set; } //Hashtable
+        public Hashtable Event { get; set; } //Hashtable
         public string QueryType { get; set; }
         public string Query { get; set; }
         public string Response { get; set; }
