@@ -202,7 +202,7 @@ namespace WebApp.Logger.Loggers
                 return false;
             }
         }
-
+        
         public static bool SkipErrorLog(ErrorModel errorModel, LogOption logOptions)
         {
             bool skip = false;
